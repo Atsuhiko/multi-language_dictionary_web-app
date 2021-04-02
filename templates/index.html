@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div style="text-align:center;">
+<font size="4">
+翻訳する言語を選んで英単語を入力してください
+</font>
+<hr>
+
+<form action = "./" method = "POST" enctype = "multipart/form-data">
+    <label>英単語</label>
+    <input class="form-control" type="eng" size="30" name="eng" value="dog"><br>
+    <p>何語に翻訳しますか？
+        <div>
+            <input type="radio" name="kind" id="r1" value="jp" checked="checked">
+            <label for="r1">日本語</label>
+        </div>
+        <div>
+            <input type="radio" name="kind" id="r2" value="de">
+            <label for="r2">ドイツ語</label>
+        </div>
+    </p>
+    <input type = "submit" value="送信">
+</form>
+<form action="" method="POST"></form>
+</div>
+
+{% if trans %}
+<center>
+<hr>
+<font size="5">translation: {{trans}}<br></font>
+<hr>
+</center>
+{% endif %}
+
+{% endblock %}
